@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Patrick Heßmann</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #fbfbfd; }
+        .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+    </style>
+</head>
+<body class="text-gray-900">
+
+    <!-- Nav -->
+    <nav class="fixed top-0 w-full z-50 glass border-b border-gray-200">
+        <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+            <span class="text-lg font-semibold tracking-tight">Patrick Heßmann</span>
+            <div class="space-x-6 text-sm font-medium text-gray-600">
+                <a href="#services" class="hover:text-black transition-colors">Leistungen</a>
+                <a href="#portfolio" class="hover:text-black transition-colors">Projekte</a>
+                <a href="#contact" class="bg-black text-white px-3 py-1 rounded-full hover:bg-gray-800 transition-all">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6 pb-2 bg-gradient-to-b from-black to-gray-500 bg-clip-text text-transparent">
+                Moderne Webseiten.<br>Intelligente Tools.
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Ich helfe lokalen Unternehmen, mit minimalistischem Design und KI-gestützter Entwicklung digital sichtbar zu werden.
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="#contact" class="bg-black text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-gray-800 transition-all shadow-lg shadow-black/10">
+                    Projekt starten
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold tracking-tight mb-4">Was ich anbiete</h2>
+                <p class="text-gray-500">Kompakte Lösungen für maximale Wirkung.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="p-8 rounded-3xl bg-[#f5f5f7] hover:bg-gray-100 transition-all duration-300 border border-transparent hover:border-gray-200 group">
+                    <div class="w-12 h-12 bg-white rounded-2xl shadow-sm mb-6 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">🌐</div>
+                    <h3 class="text-xl font-semibold mb-3">Landingpages</h3>
+                    <p class="text-gray-500 leading-relaxed">Moderne, mobil-optimierte Einseiter, die Besucher in Kunden verwandeln.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="p-8 rounded-3xl bg-[#f5f5f7] hover:bg-gray-100 transition-all duration-300 border border-transparent hover:border-gray-200 group">
+                    <div class="w-12 h-12 bg-white rounded-2xl shadow-sm mb-6 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">🤖</div>
+                    <h3 class="text-xl font-semibold mb-3">KI-Automatisierung</h3>
+                    <p class="text-gray-500 leading-relaxed">Python-Skripte, die mühsame manuelle Aufgaben in Sekunden erledigen.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="p-8 rounded-3xl bg-[#f5f5f7] hover:bg-gray-100 transition-all duration-300 border border-transparent hover:border-gray-200 group">
+                    <div class="w-12 h-12 bg-white rounded-2xl shadow-sm mb-6 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">🛠️</div>
+                    <h3 class="text-xl font-semibold mb-3">Web-Fixes</h3>
+                    <p class="text-gray-500 leading-relaxed">Schnelle Reparaturen, Performance-Optimierung und Fehlerbehebung.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-24">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold tracking-tight mb-4">Ausgewählte Arbeiten</h2>
+                <p class="text-gray-500">Wo Design auf Funktionalität trifft.</p>
+            </div>
+
+            <!-- Featured Project: TQ Lern-Hub -->
+            <div class="mb-20 group cursor-pointer">
+                <div class="relative bg-slate-900 rounded-3xl overflow-hidden mb-8 border border-gray-100 shadow-2xl">
+                    <img src="assets/tq-hub-main.png" alt="TQ Lern-Hub Dashboard" class="w-full h-auto group-hover:scale-105 transition-transform duration-700" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-300 to-gray-400 hidden items-center justify-center text-gray-500 italic">TQ-Hub MacBook Mockup</div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 items-start">
+                    <div>
+                        <h3 class="text-3xl font-bold tracking-tight mb-4">TQ Lern-Hub: AI-gestützte Bildung</h3>
+                        <p class="text-gray-500 text-lg leading-relaxed mb-6">
+                            Ein hochmodernes Dashboard zur Prüfungsvorbereitung. Durch die Integration eines KI-Mentors und einer intuitiven iCloud-ähnlichen UI wird komplexes Lernen effizient und visuell ansprechend gestaltet.
+                        </p>
+                        <div class="flex gap-3 text-sm font-medium text-gray-400">
+                            <span class="px-3 py-1 bg-gray-100 rounded-full text-gray-600">Next.js</span>
+                            <span class="px-3 py-1 bg-gray-100 rounded-full text-gray-600">Gemini AI</span>
+                            <span class="px-3 py-1 bg-gray-100 rounded-full text-gray-600">Tailwind CSS</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="group/detail cursor-pointer">
+                            <div class="aspect-square bg-slate-900 rounded-2xl overflow-hidden mb-2 border border-gray-100">
+                                <img src="assets/Bildschirmfoto 2026-10-25 um 10.04.07.png" alt="AI Mentor Detail" class="w-full h-full object-contain group-hover/detail:scale-110 transition-transform duration-500" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="w-full h-full bg-gray-300 hidden items-center justify-center text-xs text-gray-500 italic">AI Mockup</div>
+                            </div>
+                            <p class="text-xs font-semibold text-gray-600">KI-Mentor Integration</p>
+                        </div>
+                        <div class="group/detail cursor-pointer">
+                            <div class="aspect-square bg-slate-900 rounded-2xl overflow-hidden mb-2 border border-gray-100">
+                                <img src="assets/Bildschirmfoto 2026-10-25 um 10.19.48.png" alt="Dashboard Detail" class="w-full h-full object-contain group-hover/detail:scale-110 transition-transform duration-500" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="w-full h-full bg-gray-300 hidden items-center justify-center text-xs text-gray-500 italic">Logic Mockup</div>
+                            </div>
+                            <p class="text-xs font-semibold text-gray-600">Modularer Workflow</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other Projects Grid -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="group cursor-pointer">
+                    <div class="aspect-video bg-gray-200 rounded-3xl overflow-hidden mb-4 border border-gray-100">
+                        <div class="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 group-hover:scale-105 transition-transform duration-500 flex items-center justify-center text-gray-500 italic">Projekt-Screenshot</div>
+                    </div>
+                    <h4 class="text-lg font-semibold">Tool zur Datenautomatisierung</h4>
+                    <p class="text-gray-500 text-sm">Python / OpenAI API</p>
+                </div>
+                <div class="group cursor-pointer">
+                    <div class="aspect-video bg-gray-200 rounded-3xl overflow-hidden mb-4 border border-gray-100">
+                        <div class="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 group-hover:scale-105 transition-transform duration-500 flex items-center justify-center text-gray-500 italic">Projekt-Screenshot</div>
+                    </div>
+                    <h4 class="text-lg font-semibold">Landingpage für lokales Gewerbe</h4>
+                    <p class="text-gray-500 text-sm">Tailwind CSS / HTML</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-white border-t border-gray-100">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold tracking-tight mb-6">Lust auf ein Projekt?</h2>
+            <p class="text-xl text-gray-500 mb-10 leading-relaxed">
+                Ich bin immer offen für spannende neue Herausforderungen. Schreib mir einfach eine Nachricht.
+            </p>
+            <a href="https://wa.me/DEINE_NUMMER" class="inline-block bg-black text-white px-10 py-4 rounded-full text-lg font-medium hover:bg-gray-800 transition-all shadow-xl shadow-black/20">
+                Nachricht senden
+            </a>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center text-sm text-gray-400">
+        <div class="flex justify-center gap-6 mb-4">
+            <a href="impressum.html" class="hover:text-gray-600 underline transition-colors">Impressum</a>
+            <a href="https://github.com/[DeinUsername]" target="_blank" class="hover:text-gray-600 transition-colors flex items-center gap-1">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.053-0.09-3.55-1.552-3.55-1.552-0. same as 1.25-0.35-0.77-0.01-0.77 0.27-.26 0.48-0.59 0.48-0.59-2.223-.25-2.287-1.203-2.303-1.203-.234-0.659-0.04-1.333.445-1.333.42.01.62.255.62.55 0 .286.199.63.405.836.22.202.477.322.755.322.334 0 .658-.175.823-.405 0.287-.25.467-.569.467-1.11 0-1.11-.831-2.043-1.841-2.043-1.011 0-1.841 0.83-1.841 1.841 0 .27.174.53.4//path></svg>
+                GitHub
+            </a>
+        </div>
+        &copy; 2026 Patrick Heßmann. Gebaut mit Leidenschaft und KI.
+    </footer>
+
+</body>
+</html>
