@@ -19,6 +19,7 @@
             <span class="text-lg font-semibold tracking-tight">Patrick Heßmann</span>
             <div class="space-x-3 sm:space-x-6 text-sm font-medium text-gray-600">
                 <a href="#services" class="hover:text-black transition-colors">Leistungen</a>
+                <a href="#extraktor" class="hover:text-black transition-colors">Rechnungs-Extraktor</a>
                 <a href="#portfolio" class="hover:text-black transition-colors">Projekte</a>
                 <a href="#contact" class="bg-black text-white px-3 py-1 rounded-full hover:bg-gray-800 transition-all">Kontakt</a>
             </div>
@@ -72,6 +73,55 @@
         </div>
     </section>
 
+    <!-- Featured Product: Rechnungs-Extraktor -->
+    <section id="extraktor" class="py-24 bg-black text-white">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-14">
+                <span class="inline-block text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">Neu: Fertige Software</span>
+                <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-5">Schluss mit Belege abtippen.</h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                    Der Rechnungs-Extraktor liest Rechnungen per KI aus und macht daraus eine fertige Excel-Liste für deinen Steuerberater.
+                </p>
+            </div>
+
+            <div class="rounded-3xl overflow-hidden border border-white/10 shadow-2xl shadow-white/5 mb-14">
+                <img src="assets/rechnungs-extraktor.png" alt="Rechnungs-Extraktor: ausgelesene Rechnungen als Tabelle mit Export-Button" loading="lazy" class="w-full h-auto">
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-14">
+                <div class="p-7 rounded-3xl bg-white/5 border border-white/10">
+                    <div class="text-sm font-semibold text-gray-400 mb-3">1</div>
+                    <h3 class="text-lg font-semibold mb-2">Hochladen</h3>
+                    <p class="text-gray-400 leading-relaxed">PDFs oder Fotos von Rechnungen ins Fenster ziehen, auch viele auf einmal.</p>
+                </div>
+                <div class="p-7 rounded-3xl bg-white/5 border border-white/10">
+                    <div class="text-sm font-semibold text-gray-400 mb-3">2</div>
+                    <h3 class="text-lg font-semibold mb-2">Prüfen</h3>
+                    <p class="text-gray-400 leading-relaxed">Datum, Lieferant, Netto, MwSt. und Brutto erscheinen in der Tabelle und lassen sich direkt korrigieren.</p>
+                </div>
+                <div class="p-7 rounded-3xl bg-white/5 border border-white/10">
+                    <div class="text-sm font-semibold text-gray-400 mb-3">3</div>
+                    <h3 class="text-lg font-semibold mb-2">Exportieren</h3>
+                    <p class="text-gray-400 leading-relaxed">Mit einem Klick als CSV speichern, die sich direkt im deutschen Excel öffnet.</p>
+                </div>
+            </div>
+
+            <ul class="grid sm:grid-cols-2 gap-x-10 gap-y-3 max-w-3xl mx-auto text-gray-300 mb-14">
+                <li class="flex gap-3"><span class="text-white">✓</span> Läuft als normale App auf Mac (Windows folgt)</li>
+                <li class="flex gap-3"><span class="text-white">✓</span> Kein Abo, keine Registrierung bei mir</li>
+                <li class="flex gap-3"><span class="text-white">✓</span> Eigener Key: du zahlst nur die tatsächlichen KI-Kosten</li>
+                <li class="flex gap-3"><span class="text-white">✓</span> Key liegt im Schlüsselbund deines Rechners</li>
+            </ul>
+
+            <div class="text-center">
+                <a href="https://wa.me/4915566901449?text=Hallo%20Patrick%2C%20ich%20interessiere%20mich%20f%C3%BCr%20den%20Rechnungs-Extraktor." class="inline-block bg-white text-black px-10 py-4 rounded-full text-lg font-medium hover:bg-gray-200 transition-all">
+                    Demo anfragen
+                </a>
+                <p class="text-sm text-gray-500 mt-5">Zur Auslese werden die Rechnungen an OpenAI gesendet. Details besprechen wir gern vorab.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Portfolio Section -->
     <section id="portfolio" class="py-24">
         <div class="max-w-5xl mx-auto px-6">
@@ -119,13 +169,6 @@
 
             <!-- Other Projects Grid -->
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="group">
-                    <div class="aspect-video bg-gray-200 rounded-3xl overflow-hidden mb-4 border border-gray-100">
-                        <img src="assets/rechnungs-extraktor.png" alt="Rechnungs-Extraktor: ausgelesene Rechnungen als Tabelle" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <h4 class="text-lg font-semibold">Rechnungs-Extraktor</h4>
-                    <p class="text-gray-500 text-sm">Rechnungen als PDF oder Foto hochladen, KI liest die Daten aus, Export als Excel-CSV. Python / OpenAI API</p>
-                </div>
                 <div class="group cursor-pointer">
                     <div class="aspect-video bg-gray-200 rounded-3xl overflow-hidden mb-4 border border-gray-100">
                         <div class="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 group-hover:scale-105 transition-transform duration-500 flex items-center justify-center text-gray-500 italic">Projekt-Screenshot</div>
