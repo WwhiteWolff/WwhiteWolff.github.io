@@ -15,7 +15,13 @@ PAGE = """<!DOCTYPE html>
 <body class="text-gray-900"><main class="max-w-4xl mx-auto px-6 py-14">
 <h1 class="text-4xl font-bold tracking-tight mb-2">Rechnungs-Extraktor</h1>
 <p class="text-gray-500 mb-8">Rechnungen hochladen, Daten automatisch auslesen, als Excel-CSV für den Steuerberater exportieren.</p>
-{% if demo %}<p class="mb-6 text-sm bg-amber-50 text-amber-800 rounded-xl px-4 py-3">Demo-Modus: Kein <code>OPENAI_API_KEY</code> gesetzt, es werden Beispieldaten angezeigt.</p>{% endif %}
+<details id="settings" class="mb-6 bg-white border border-gray-200 rounded-2xl px-5 py-4" {% if demo %}open{% endif %}>
+  <summary class="cursor-pointer text-sm font-medium">Einstellungen: OpenAI-Key <span id="keystate" class="text-gray-400"></span></summary>
+  <p class="text-sm text-gray-500 mt-3">Ohne Key läuft der Demo-Modus mit Beispieldaten. Der Key wird im Schlüsselbund deines Systems gespeichert, nicht in einer Datei.</p>
+  <div class="flex gap-2 mt-3"><input id="key" type="password" placeholder="sk-..." class="flex-1 border border-gray-300 rounded-full px-4 py-2 text-sm outline-none focus:border-black">
+  <button id="savekey" class="bg-black text-white px-5 py-2 rounded-full text-sm">Speichern</button>
+  <button id="delkey" class="border border-gray-300 px-5 py-2 rounded-full text-sm">Entfernen</button></div>
+</details>
 <label id="drop" class="block border-2 border-dashed border-gray-300 rounded-3xl bg-white p-12 text-center cursor-pointer hover:border-black transition-colors">
   <span class="text-lg font-semibold">PDFs oder Fotos hierher ziehen</span><br><span class="text-sm text-gray-500">oder klicken zum Auswählen</span>
   <input id="files" type="file" multiple accept=".pdf,image/png,image/jpeg,image/webp" class="hidden">
@@ -48,6 +54,11 @@ async function upload(list){
   }
   $("status").textContent=`${rows.length} Rechnung(en) ausgelesen. Werte lassen sich direkt in der Tabelle korrigieren.`;
 }
+async function keyState(){const j=await (await fetch("/api/key")).json();$("keystate").textContent=j.demo?"· Demo-Modus":"· gespeichert";}
+async function keyCall(method,body){const r=await fetch("/api/key",{method,headers:{"Content-Type":"application/json"},body});if(!r.ok)alert((await r.json()).error);$("key").value="";keyState();}
+$("savekey").addEventListener("click",()=>keyCall("POST",JSON.stringify({key:$("key").value})));
+$("delkey").addEventListener("click",()=>keyCall("DELETE"));
+keyState();
 $("files").addEventListener("change",e=>upload(e.target.files));
 $("drop").addEventListener("dragover",e=>e.preventDefault());
 $("drop").addEventListener("drop",e=>{e.preventDefault();upload(e.dataTransfer.files);});
@@ -61,6 +72,21 @@ $("export").addEventListener("click",async()=>{
 @app.get("/")
 def index():
     return render_template_string(PAGE, demo=extractor.demo_mode())
+
+
+@app.route("/api/key", methods=["GET", "POST", "DELETE"])
+def api_key():
+    try:
+        if request.method == "POST":
+            key = ((request.get_json(silent=True) or {}).get("key") or "").strip()
+            if not key.startswith("sk-"):
+                return jsonify(error="Ungültiger Key. Er beginnt mit sk-."), 400
+            extractor.save_key(key)
+        elif request.method == "DELETE":
+            extractor.delete_key()
+    except Exception as e:
+        return jsonify(error=f"Schlüsselbund-Fehler: {e}"), 500
+    return jsonify(demo=extractor.demo_mode())
 
 
 @app.post("/extract")

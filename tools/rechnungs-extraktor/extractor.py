@@ -22,8 +22,35 @@ DEMO_ROWS = [
 ]
 
 
+SERVICE = "rechnungs-extraktor"
+
+
+def get_key():
+    """Key aus Umgebungsvariable, sonst aus dem System-Schlüsselbund."""
+    if os.environ.get("OPENAI_API_KEY"):
+        return os.environ["OPENAI_API_KEY"]
+    try:
+        import keyring
+        return keyring.get_password(SERVICE, "openai")
+    except Exception:
+        return None
+
+
+def save_key(key: str) -> None:
+    import keyring
+    keyring.set_password(SERVICE, "openai", key)
+
+
+def delete_key() -> None:
+    import keyring
+    try:
+        keyring.delete_password(SERVICE, "openai")
+    except keyring.errors.PasswordDeleteError:
+        pass
+
+
 def demo_mode() -> bool:
-    return not os.environ.get("OPENAI_API_KEY")
+    return not get_key()
 
 
 def _demo(index: int) -> dict:
@@ -45,7 +72,7 @@ def extract(filename: str, data: bytes, mimetype: str, index: int = 0) -> dict:
     else:
         part = {"type": "input_image", "image_url": f"data:{mimetype};base64,{b64}"}
 
-    resp = OpenAI().responses.create(
+    resp = OpenAI(api_key=get_key()).responses.create(
         model=MODEL,
         input=[{"role": "user", "content": [{"type": "input_text", "text": PROMPT}, part]}],
         text={"format": {"type": "json_object"}},
