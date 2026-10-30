@@ -1,16 +1,14 @@
-# 🍎 Apple-Style Portfolio
+# Portfolio Patrick Heßmann
 
-Dieses Projekt enthält dein personalisiertes Portfolio im minimalistischen Apple-Design.
+Persönliche Portfolio-Website im minimalistischen Apple-Design (HTML + Tailwind CSS).
 
 ## Struktur
-- `index.html`: Die Hauptseite deiner Website.
-- `assets/`: Ordner für deine Projekt-Screenshots und Bilder.
+- `index.html`: Startseite
+- `impressum.html`: Impressum
+- `assets/`: Screenshots und Bilder
 
-## So startest du
-1. Öffne den Ordner in Visual Studio Code.
-2. Klicke mit der rechten Maustaste auf die `index.html` und wähle **'Open with Live Server'** oder öffne die Datei direkt im Browser.
-3. Passe die Platzhalter wie `[DeinUsername]` (GitHub) in der `index.html` an.
+## Lokal ansehen
+`index.html` direkt im Browser öffnen oder mit VS Code Live Server starten.
 
-## Anpassungen
-- **Farben:** Du kannst die Tailwind-Klassen (z.B. `bg-black`, `text-gray-500`) ändern, um deine eigene Akzentfarbe einzubauen.
-- **Bilder:** Lege deine Screenshots in den `assets/` Ordner und verlinke sie in der `index.html`.
+## Veröffentlichen (GitHub Pages)
+Repository → Settings → Pages → Branch `main`, Ordner `/ (root)`.
